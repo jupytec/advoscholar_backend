@@ -1,0 +1,112 @@
+    -   id: seed-isort-configrepos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-yaml
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-json
+      - id: requirements-txt-fixer
+      - id: check-docstring-first
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: no-commit-to-branch
+      - id: mixed-line-ending
+      - id: no-commit-to-branch
+        args: ['--pattern', '^(?!^(build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert|bump)/[-a-zA-Z0-9]+)']
+
+-   repo: https://github.com/asottile/seed-isort-config
+    rev: v2.2.0
+    hooks:
+      - id: seed-isort-config
+
+-   repo: https://github.com/timothycrosley/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args:
+          - --profile=black
+          - --line-width=79
+
+-   repo: https://github.com/PyCQA/autoflake
+    rev: v2.2.1
+    hooks:
+      - id: autoflake
+
+-   repo: https://github.com/PyCQA/docformatter
+    rev: v1.7.5
+    hooks:
+      - id: docformatter
+
+-   repo: https://github.com/PyCQA/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        args:
+          - --max-line-length=79
+          - --ignore=W503,B008
+
+-   repo: https://github.com/pylint-dev/pylint
+    rev: v3.0.1
+    hooks:
+      - id: pylint
+        args:
+          - --rcfile=.pylintrc
+
+-   repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        exclude: ^app/test/
+
+-   repo: https://github.com/crate-ci/typos
+    rev: v1.16.20
+    hooks:
+      - id: typos
+
+-   repo: https://github.com/psf/black
+    rev: 23.10.1
+    hooks:
+      - id: black
+        language_version: python
+        args:
+          - --line-length=79
+
+-   repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "fc260393cc4ec09f8fc0a5ba4437f481c8b55dc1"
+    hooks:
+      - id: prettier
+
+-   repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: python-use-type-annotations
+      - id: python-no-eval
+      - id: python-check-blanket-noqa
+      - id: python-check-blanket-type-ignore
+
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.0
+    hooks:
+      - id: pyupgrade
+
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.3.1
+    hooks:
+      - id: python-safety-dependencies-check
+
+-   repo: https://github.com/dannysepler/rm_unneeded_f_str
+    rev: v0.2.0
+    hooks:
+      - id: rm-unneeded-f-str
+
+-   repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v9.5.0
+    hooks:
+      - id: commitlint
+        stages: [ commit-msg ]
+        additional_dependencies: [ "@commitlint/config-conventional" ]
