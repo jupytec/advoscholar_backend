@@ -2,13 +2,18 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.tokens import RefreshToken, OutstandingToken
-from .serializers import UserLoginSerializer, UserProfileSerializer, UserProfileUpdateSerializer, UserRegisterSerializer
+from rest_framework_simplejwt.tokens import RefreshToken
+from .serializers import (UserLoginSerializer,
+                          UserProfileSerializer,
+                          UserProfileUpdateSerializer,
+                          UserRegisterSerializer
+                          )
 from django.contrib.auth import authenticate
 from rest_framework.viewsets import GenericViewSet
 from drf_spectacular.utils import extend_schema
-import datetime
+from datetime import datetime
 from emailer.email_backend import send_email
+
 
 class UserRegisterView(GenericViewSet):
     serializer_class = UserRegisterSerializer
@@ -57,47 +62,64 @@ class UserLoginView(GenericViewSet):
         - `kwargs`: Additional keyword arguments passed to the view.
 
         Returns:
-        - A Response containing the access and refresh tokens upon successful login.
+        - A Response containing the access and refresh
+          tokens upon successful login.
         """
         serializer = UserLoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         email = serializer.validated_data['email']
-        user = authenticate(request, email=email, password=serializer.validated_data['password'])
+        user = authenticate(
+            request,
+            email=email,
+            password=serializer.validated_data['password'])
         if not user:
-            return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({
+                'detail': 'Invalid credentials'
+                }, status=status.HTTP_401_UNAUTHORIZED)
         refresh = RefreshToken.for_user(user)
 
         # Get the metadata from where the request is coming from
         # including device and IP address
         try:
-                user_agent = request.META.get('HTTP_USER_AGENT', None)
-                ip_address = request.META.get('REMOTE_ADDR', None)
+            user_agent = request.META.get('HTTP_USER_AGENT', None)
+            ip_address = request.META.get('REMOTE_ADDR', None)
         except AttributeError:
-                print(AttributeError)
-                user_agent = None
-                ip_address = None
+            print(AttributeError)
+            user_agent = None
+            ip_address = None
 
         subscriber_name = email.split('@')[0]
-        current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         # split date and time
         date, time = current_date.split(' ')
-        date = datetime.datetime.strptime(date, "%Y-%m-%d").strftime("%dth of %B, %Y")
-        time = datetime.datetime.strptime(time, "%H:%M:%S").strftime("%I:%M %p")
+        date = datetime.strptime(date, "%Y-%m-%d").strftime("%dth of %B, %Y")
+        time = datetime.strptime(time, "%H:%M:%S").strftime("%I:%M %p")
         formated_time = f"{date} at {time}"
         # Prepare the HTML content from the template
-        context = {'subscriber_name': subscriber_name, 'user_agent': user_agent, 'ip_address': ip_address, 'time': formated_time}
+        context = {
+            'subscriber_name': subscriber_name,
+            'user_agent': user_agent,
+            'ip_address': ip_address,
+            'time': formated_time
+            }
 
         # Send email using the existing backend
         subject = 'Donation Trace - Login Alert'
         recipient_list = [email]
         template = 'login_alert.html'
 
-        send_email(subject=subject, recipient_list=recipient_list, context=context, template=template)
+        send_email(
+            subject=subject,
+            recipient_list=recipient_list,
+            context=context,
+            template=template
+            )
 
         return Response({
             'refresh': str(refresh),
             'access': str(refresh.access_token)
         }, status=status.HTTP_200_OK)
+
 
 class UserLogoutView(GenericViewSet):
     """
@@ -127,9 +149,14 @@ class UserLogoutView(GenericViewSet):
                 token = RefreshToken(request.data.get('refresh'))
                 if token:
                     token.blacklist()
-                return Response({'detail': 'Logout successful'}, status=status.HTTP_200_OK)
+                return Response({
+                    'detail': 'Logout successful'
+                    }, status=status.HTTP_200_OK)
             except Exception as e:
-                return Response({'detail': 'Invalid refresh token'}, status=status.HTTP_401_UNAUTHORIZED)
+                print(e)
+                return Response({
+                    'detail': 'Invalid refresh token'
+                    }, status=status.HTTP_401_UNAUTHORIZED)
         else:
             return Response(
                 {
@@ -160,6 +187,7 @@ class UpdateProfileView(APIView):
         - The user profile object.
         """
         return request.user.userprofile
+
     @extend_schema(tags=['User Profile'], summary='Get a user profile')
     def get(self, request, *args, **kwargs):
         """
@@ -197,6 +225,7 @@ class UpdateProfileView(APIView):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
 class PasswordResetView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -232,20 +261,22 @@ class UserProfileView(APIView):
         serializer = UserProfileSerializer(profile)
         return Response(serializer.data)
 
+
 class DeleteUserView(APIView):
     permission_classes = [IsAuthenticated]
 
     @extend_schema(tags=['User Profile'], summary='Delete user profile')
     def delete(self, request, *args, **kwargs):
         try:
-                user = request.user
+            user = request.user
 
-                # Retrive the user profile if it exists
-                user_profile = getattr(user, 'userprofile', None)
-                if user_profile:
-                    user_profile.delete()
-
-                user.delete()
-                return Response(status=status.HTTP_204_NO_CONTENT)
+            # Retrive the user profile if it exists
+            user_profile = getattr(user, 'userprofile', None)
+            if user_profile:
+                user_profile.delete()
+            user.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
         except Exception as e:
-                return Response({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({
+                     "message": str(e)
+                     }, status=status.HTTP_400_BAD_REQUEST)

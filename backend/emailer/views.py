@@ -1,10 +1,7 @@
 from emailer.email_backend import send_email
-from django.template.loader import render_to_string
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
-from rest_framework.views import APIView
-from rest_framework.parsers import JSONParser
 
 from core.exception_handlers import ErrorEnum, ErrorResponse, response_schemas
 
@@ -15,6 +12,7 @@ from .serializers import (
 )
 from drf_spectacular.utils import extend_schema
 
+
 class NewsletterView(GenericViewSet):
     serializer_class = NewsletterSerializer
 
@@ -23,7 +21,7 @@ class NewsletterView(GenericViewSet):
     )
     @extend_schema(tags=['Newsletter'], summary='Subscribe to newsletter')
     def subscribe(self, request, email, **kwargs):
-        #serializer = NewsletterSerializer(data=request.data)
+        # serializer = NewsletterSerializer(data=request.data)
         serializer = NewsletterSerializer(data={"email": email})
 
         serializer.is_valid(raise_exception=True)
@@ -44,11 +42,17 @@ class NewsletterView(GenericViewSet):
         recipient_list = [validated_data['email']]
         template = 'email/newsletter.html'
 
-        send_email(subject=subject, recipient_list=recipient_list, context=context, template=template)
-
+        send_email(
+                subject=subject,
+                recipient_list=recipient_list,
+                context=context,
+                template=template
+                )
 
         return Response(
-            data={"detail": "email is subscribed successfully", "statusCode": 201},
+            data={
+                "detail": "email is subscribed successfully",
+                "statusCode": 201},
             status=status.HTTP_201_CREATED,
         )
 
@@ -75,7 +79,12 @@ class NewsletterView(GenericViewSet):
             recipient_list = [email]
             template = 'email/unsubscribenewsletter.html'
 
-            send_email(subject=subject, recipient_list=recipient_list, context=context, template=template)
+            send_email(
+                subject=subject,
+                recipient_list=recipient_list,
+                context=context,
+                template=template
+                )
 
             return Response(
                 data={"detail": "email is unsubscribed successfully"},
@@ -94,4 +103,3 @@ class NewsletterView(GenericViewSet):
         subscribers = Newsletter.objects.all()
         serializer = NewsletterSerializer(subscribers, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-

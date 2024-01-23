@@ -1,3 +1,4 @@
+"""Contact Us Views"""
 from emailer.email_backend import send_email
 # from django.template.loader import render_to_string
 from rest_framework import status
@@ -9,19 +10,22 @@ from rest_framework.viewsets import GenericViewSet
 from core.exception_handlers import response_schemas
 # ErrorEnum, ErrorResponse,
 
-# from .models import ContactUs
-from .serializers import ContactUsSerializer, MessageSerializer
 from drf_spectacular.utils import extend_schema
+from .serializers import ContactUsSerializer, MessageSerializer
 
 
 class ContactUsView(GenericViewSet):
+    """ Contact Us View """
     serializer_class = ContactUsSerializer
 
     @response_schemas(
         response_model=MessageSerializer, code=201, schema_response_codes=[400]
     )
     @extend_schema(tags=['Contact Us'], summary='Contact Us using email')
-    def contactus(self, request, **kwargs):
+    def contactus(self, request): # , **kwargs):
+        """
+        Contact Us using email
+        """
         # serializer = NewsletterSerializer(data=request.data)
         serializer = ContactUsSerializer(
             data={

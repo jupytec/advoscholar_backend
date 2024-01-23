@@ -4,6 +4,7 @@ from emailer.signals import registration_signal
 from django.core import mail
 import pytest
 
+
 class TestSignals:
     @pytest.mark.django_db
     def test_send_welcome_email_signal(self):
@@ -22,9 +23,11 @@ class TestSignals:
 
         # Check if the welcome email was sent
         print("After clearing:", len(mail.outbox))
-        print("After clearing:",mail.outbox[0].subject)
+        print("After clearing:", mail.outbox[0].subject)
         assert len(mail.outbox) == 1
-        assert mail.outbox[0].subject == 'Thank You for Registering for Africa SME ASSEMBLY'
+        assert (
+            mail.outbox[0].subject == 'Thank You for Registering'
+        )
 
     def teardown_method(self, method):
         # Disconnect the signal handler after each test

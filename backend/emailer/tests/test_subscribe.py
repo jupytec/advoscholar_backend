@@ -22,7 +22,9 @@ class TestSubscribe:
         assert response.json()["detail"] == "email is subscribed successfully"
 
     def test_invalid_email_passed_returns_400(self, api_client):
-        response = api_client.post("/api/v1/subscribe", data={"email": "wrong email"})
+        response = api_client.post(
+            "/api/v1/subscribe", data={"email": "wrong email"}
+            )
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
         assert response.json()["error_code"] == ErrorEnum.ERR_001.name
@@ -34,7 +36,9 @@ class TestSubscribe:
         response = api_client.post("/api/v1/subscribe", data={"email": email})
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
-        assert response.json()["detail"][0]["msg"] == "email already subscribed"
+        assert (
+            response.json()["detail"][0]["msg"] == "email already subscribed"
+        )
 
 
 @pytest.mark.django_db
@@ -48,7 +52,9 @@ class TestUnSubscribe:
         )
 
         assert response.status_code == status.HTTP_200_OK
-        assert response.json()["detail"] == "email is unsubscribed successfully"
+        assert (
+            response.json()["detail"] == "email is unsubscribed successfully"
+        )
 
     def test_invalid_email_passed_returns_400(self, api_client):
         email = "invalid email"
