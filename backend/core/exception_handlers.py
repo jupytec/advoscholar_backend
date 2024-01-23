@@ -11,7 +11,8 @@ class ErrorEnum(Enum):
     ERR_001 = (
         "Validation Error",
         status.HTTP_400_BAD_REQUEST,
-        "The request data failed validation. Please check your input and try again.",
+        "The request data failed validation. Please check your input"
+        "and try again.",
     )
     ERR_002 = (
         "Authentication Error",
@@ -27,8 +28,8 @@ class ErrorEnum(Enum):
         "Permission Error",
         status.HTTP_403_FORBIDDEN,
         (
-            "Authentication credentials are either missing or the user lacks the"
-            " necessary permissions to perform this action."
+            "Authentication credentials are either missing or the user lacks"
+            "the necessary permissions to perform this action."
         ),
     )
     ERR_005 = (
@@ -49,22 +50,30 @@ class ErrorResponse(Response):
 
     Args:
         code (ErrorEnum): An enumeration representing the error code.
-        serializer_errors (dict, optional): A dictionary of serializer validation errors.
-            If provided, it would contain field names as keys and error information as values.
+        serializer_errors (dict, optional): A dictionary of serializer
+        validation errors.
+            If provided, it would contain field names as keys and error
+            information as values.
             Defaults to None.
-        extra_detail (str, optional): Additional details or context for the error. Defaults to None.
+        extra_detail (str, optional): Additional details or context for
+        the error. Defaults to None.
         status (int, optional): The HTTP status code for the error response.
-            If not provided, it defaults to the status associated with the provided error code.
-        headers (dict, optional): Additional headers to include in the response. Defaults to None.
+            If not provided, it defaults to the status associated with
+            the provided error code.
+        headers (dict, optional): Additional headers to include in the
+        response. Defaults to None.
 
     Attributes:
-        data (dict): A dictionary containing error information, including the error code,
+        data (dict): A dictionary containing error information,
+        including the error code,
             error message, and validation error details.
-            If `serializer_errors` is provided, it includes validation error details for each field.
+            If `serializer_errors` is provided, it includes validation
+              error details for each field.
         status_code (int): The HTTP status code for the error response.
 
     Example:
-        To create an error response with a specific error code and additional details:
+        To create an error response with a specific error code
+        and additional details:
 
         >>> error_response = ErrorResponse(
         ...     code=ErrorEnum.ERR_001,
@@ -88,7 +97,8 @@ class ErrorResponse(Response):
             "error": code.value[0],
             "detail": (
                 [
-                    {"loc": ["body", field], "msg": error[0], "type": error[0].code}
+                    {"loc": ["body", field],
+                     "msg": error[0], "type": error[0].code}
                     for field, error in serializer_errors.items()
                 ]
                 if serializer_errors
@@ -117,15 +127,19 @@ def custom_exception_handler(exc, context):
             response.data = {"non-field": response.data}
 
         if password_errors := check_password(response.data):
-            # Remove any other password errors aside from the one processed and returned
+            # Remove any other password errors
+            # aside from the one processed and returned
             response.data = {
-                k: v for k, v in response.data.items() if "password" not in v[0].code
+                k: v for k, v in response.data.items()
+                if "password" not in v[0].code
             }
             response.data = response.data | password_errors
 
         if response:
             result = [
-                code for code in ErrorEnum if code.value[1] == response.status_code
+                code
+                for code in ErrorEnum
+                if code.value[1] == response.status_code
             ]
 
             custom_response = ErrorResponse(
@@ -145,7 +159,8 @@ def check_password(exc: dict):
     if error_list := exc.get("non_field_errors", None):
         if any("password" in error.code for error in error_list):
             error_dict = {
-                f"password{index}": [error] for index, error in enumerate(error_list, 1)
+                f"password{index}": [error]
+                for index, error in enumerate(error_list, 1)
             }
 
             return error_dict
@@ -183,13 +198,15 @@ def response_schemas(
             ...
 
        For default 201_CREATED response
-        @response_schemas(response_model=MyModelSerializer, code = 201, schema_response_codes=[400, 401])
+        @response_schemas(response_model=MyModelSerializer,
+        code = 201, schema_response_codes=[400, 401])
         class my_view(request):
             # Your view logic here
             ...
 
        For default 200_OK response and extra codes
-        @response_schemas(response_model=MyModelSerializer, schema_response_codes=[400, 401])
+        @response_schemas(response_model=MyModelSerializer,
+        schema_response_codes=[400, 401])
         class my_view(request):
             # Your view logic here
             ...
@@ -197,8 +214,8 @@ def response_schemas(
     """
     if response_model and 200 in schema_response_codes:
         raise AssertionError(
-            "response_model and 200 in schema_response_codes are mutually exclusive,"
-            " choose one"
+            "response_model and 200 in schema_response_codes"
+            "are mutually exclusive, choose one"
         )
 
     error_dict = {code: response_model}

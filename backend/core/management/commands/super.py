@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from decouple import config
 
 User = get_user_model()
+
+
 class Command(BaseCommand):
     help = 'Create a superuser temporarily for production'
 
@@ -12,5 +14,5 @@ class Command(BaseCommand):
 
         if not User.objects.filter(username=username).exists():
             User.objects.create_superuser(username, '', password)
-            self.stdout.write(self.style.SUCCESS(f'Temporary superuser {username} created '))
-
+            self.stdout.write(
+                self.style.SUCCESS(f'Temporary superuser {username} created '))

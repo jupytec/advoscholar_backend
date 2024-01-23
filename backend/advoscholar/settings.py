@@ -15,6 +15,7 @@ from decouple import config
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from datetime import timedelta
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY=config('SECRET_KEY')
+# SECRET_KEY=config('SECRET_KEY')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'h3$9j3%^*63(=j-2(@col83qx#qmk%-8f$539dgi=&b&8mptq+'
 
@@ -121,16 +122,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'NumericPasswordValidator',
     },
 ]
 
@@ -190,7 +195,6 @@ CSRF_COOKIE_HTTPONLY = False
 
 CORS_ALLOW_CREDENTIALS = True
 
-from datetime import timedelta
 
 ACTIVATE_JWT = True
 SIMPLE_JWT = {
@@ -229,7 +233,7 @@ LOGGING = {
         },
     },
     "loggers": {
-        "": {  # The empty string indicates ~ All Apps including installed apps
+        "": {  # empty string indicates ~ All Apps including installed apps
             "handlers": ["file"],
             "propagate": True,
         },
@@ -237,7 +241,8 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": (
-                "{asctime} ({levelname}) -  {module} {name} {process:d} {thread:d}"
+                "{asctime} ({levelname}) -  \
+                        {module} {name} {process:d} {thread:d}"
                 " {message}"
             ),
             "style": "{",

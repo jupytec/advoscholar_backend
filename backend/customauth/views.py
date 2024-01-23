@@ -131,7 +131,11 @@ class UserLogoutView(GenericViewSet):
             except Exception as e:
                 return Response({'detail': 'Invalid refresh token'}, status=status.HTTP_401_UNAUTHORIZED)
         else:
-            return Response({'detail': 'Both access and refresh tokens are required for logout'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {
+                     'detail': 'Both access and refresh tokens \
+                        are required for logout'
+                }, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UpdateProfileView(APIView):
@@ -142,7 +146,9 @@ class UpdateProfileView(APIView):
     """
     permission_classes = [IsAuthenticated]
 
-    @extend_schema(tags=['User Profile'], summary='Get user profile(Authenticated)')
+    @extend_schema(
+              tags=['User Profile'],
+              summary='Get user profile(Authenticated)')
     def get_object(self, request):
         """
         Get the user profile object associated with the authenticated user.
@@ -185,7 +191,8 @@ class UpdateProfileView(APIView):
         - A Response containing the updated user profile data.
         """
         profile = self.get_object(request)
-        serializer = UserProfileUpdateSerializer(profile, data=request.data, partial=True)
+        serializer = UserProfileUpdateSerializer(
+             profile, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -196,13 +203,17 @@ class PasswordResetView(APIView):
     @extend_schema(tags=['Authentication'], summary='Reset user password')
     def put(self, request, *args, **kwargs):
         profile = request.user.userprofile
-        serializer = UserProfileUpdateSerializer(profile, data=request.data, partial=True)
+        serializer = UserProfileUpdateSerializer(
+             profile, data=request.data, partial=True)
 
         if serializer.is_valid():
             serializer.save()
-            return Response({'detail': 'Password reset successfully'}, status=status.HTTP_200_OK)
+            return Response({
+                 'detail': 'Password reset successfully'},
+                 status=status.HTTP_200_OK)
         else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                 serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserProfileView(APIView):
@@ -213,7 +224,8 @@ class UserProfileView(APIView):
     """
     permission_classes = [IsAuthenticated]
 
-    @extend_schema(tags=['User Profile'], summary='Access user profile details')
+    @extend_schema(tags=['User Profile'],
+                   summary='Access user profile details')
     def get(self, request, *args, **kwargs):
         # Access the UserProfile from the CustomUser instance
         profile = request.user.userprofile
