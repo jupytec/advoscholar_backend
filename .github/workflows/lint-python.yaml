@@ -21,11 +21,13 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd backend
           python -m pip install --upgrade pip
           pip install -r requirements.txt flake8
 
       - name: Run flake8
         run: |
+          cd backend
           flake8
   pylint:
     runs-on: ubuntu-latest
@@ -41,9 +43,11 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd backend
           python -m pip install --upgrade pip
           pip install -r requirements.txt pylint
 
       - name: Run pylint
         run: |
+          cd backend
           pylint $(find . -type f -name "*.py")
