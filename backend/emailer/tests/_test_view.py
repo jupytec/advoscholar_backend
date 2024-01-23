@@ -3,6 +3,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 import pytest
 
+
 @pytest.mark.django_db
 class TestEmailSendingView:
 
@@ -18,7 +19,10 @@ class TestEmailSendingView:
             "message": "This is a test email message.",
         }
 
-        response = self.client.post(self.send_email_url, email_data, format="json")
+        response = self.client.post(
+            self.send_email_url,
+            email_data, format="json"
+            )
 
         # Check if the email was sent successfully
         assert response.status_code == status.HTTP_200_OK

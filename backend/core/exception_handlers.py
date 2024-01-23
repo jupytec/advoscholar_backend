@@ -219,10 +219,10 @@ def response_schemas(
         )
 
     error_dict = {code: response_model}
-    for code in schema_response_codes:
-        if isinstance(code, int):
-            if code == status.HTTP_400_BAD_REQUEST:
-                error_dict[code] = ValidationErrorSerializer
+    for inner_code in schema_response_codes:
+        if isinstance(inner_code, int):
+            if inner_code == status.HTTP_400_BAD_REQUEST:
+                error_dict[inner_code] = ValidationErrorSerializer
             else:
-                error_dict[code] = ErrorSerializer
+                error_dict[inner_code] = ErrorSerializer
     return extend_schema(responses=error_dict if error_dict else empty)
