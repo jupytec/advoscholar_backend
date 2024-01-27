@@ -21,7 +21,7 @@ def create_user_profile(sender, instance, created, **kwargs):
         # Prepare the HTML content from the template
         context = {'subscriber_name': subscriber_name}
         # Send email using the existing backend
-        subject = 'Donation Trace - Registration Alert'
+        subject = 'Advoscholar - Registration Alert'
         recipient_list = [email]
         template = 'email/signup_alert.html'
         send_email(
