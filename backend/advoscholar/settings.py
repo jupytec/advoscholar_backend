@@ -60,7 +60,6 @@ CUSTOM_APPS = [
     'customauth.apps.UserAppConfig',
     "core",
     "emailer",
-    'signup',
     'contactus',
 ]
 
