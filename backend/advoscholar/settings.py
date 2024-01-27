@@ -174,8 +174,8 @@ REST_FRAMEWORK = {
 
 # ? Documentation Settings
 SPECTACULAR_SETTINGS = {
-    "TITLE": "DONATION TRACE API",
-    "DESCRIPTION": "API Documentation for Donation TRACE",
+    "TITLE": "Advoscholar API",
+    "DESCRIPTION": "API Documentation for Advoscholar",
     "VERSION": "0.0.1",
     "SERVE_INCLUDE_SCHEMA": False,
     "DISABLE_ERRORS_AND_WARNINGS": True,
