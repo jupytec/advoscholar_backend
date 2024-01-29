@@ -11,16 +11,18 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 
 class UserRegisterSerializer(serializers.ModelSerializer):
-    first_name = serializers.CharField(max_length=50, required=True)
-    last_name = serializers.CharField(max_length=50, required=True)
+    school_name = serializers.CharField(max_length=100, required=True)
+    school_address = serializers.CharField(max_length=150, required=True)
     email = serializers.EmailField(required=True)
+    phone_number = serializers.CharField(max_length=20)
     password = serializers.CharField(write_only=True, required=True)
-
+    
     class Meta:
         model = get_user_model()
-        fields = ('first_name', 'last_name', 'email', 'password')
+        fields = ('school_name', 'school_address', 'email', 'phone_number', 'password')
 
     def validate(self, data):
+        
         password = data.get('password')
         validate_password(password)
         return data

@@ -36,6 +36,7 @@ class UserRegisterView(GenericViewSet):
         - A Response indicating success or failure of the registration.
         """
         serializer = UserRegisterSerializer(data=request.data)
+        
         if serializer.is_valid():
             user_data = serializer.save()
             return Response({
