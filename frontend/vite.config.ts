@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import path from "path"
 import react from "@vitejs/plugin-react-swc";
 import mkcert from "vite-plugin-mkcert";
 import tsPaths from "vite-tsconfig-paths";
@@ -27,5 +28,10 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ["react/jsx-runtime"],
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    }
   },
 });

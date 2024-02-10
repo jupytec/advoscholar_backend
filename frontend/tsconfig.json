@@ -4,7 +4,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
@@ -20,7 +20,8 @@
     "types": ["vite/client", "@total-typescript/ts-reset"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
