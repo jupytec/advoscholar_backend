@@ -3,6 +3,11 @@ import { type RouteObject } from "react-router-dom";
 
 const Index = lazy(() => import("@/pages/index"));
 const Notfound = lazy(() => import("@/pages/404"));
+const Login = lazy(() => import("@/pages/auth/login"))
+const VerifyEmail = lazy(() => import("@/pages/auth/verify"))
+const ForgotPasssword = lazy(() => import("@/pages/auth/forgotten"))
+const Signup = lazy(() => import("@/pages/auth/signup"))
+const SetPassword = lazy(() => import("@/pages/auth/setPassword"))
 
 export const routes: Array<RouteObject> = [
   {
@@ -14,6 +19,46 @@ export const routes: Array<RouteObject> = [
     ),
   },
   {
+    path: "/login",
+    element: (
+      <Suspense>
+        <Login />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/verify_email",
+    element: (
+      <Suspense>
+        <VerifyEmail />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/forgot_password",
+    element: (
+      <Suspense>
+        <ForgotPasssword />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <Suspense>
+        <Signup />
+      </Suspense>
+    ),
+  },
+  {
+    path: "set_password",
+    element: (
+      <Suspense>
+        <SetPassword />
+      </Suspense>
+    ),
+  },
+  {
     path: "*",
     element: (
       <Suspense>
@@ -21,6 +66,7 @@ export const routes: Array<RouteObject> = [
       </Suspense>
     ),
   },
+  
 ];
 
 export default routes;
