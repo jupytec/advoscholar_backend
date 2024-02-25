@@ -11,11 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
-from decouple import config
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -59,8 +54,6 @@ THIRD_PARTY_APPS = [
 CUSTOM_APPS = [
     'customauth.apps.UserAppConfig',
     "core",
-    "emailer",
-    'contactus',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
@@ -206,48 +199,41 @@ SIMPLE_JWT = {
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.googlemail.com"
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = config("DEFAULT_SENDER")
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+# DEFAULT_FROM_EMAIL = config("DEFAULT_SENDER")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
-# Cloudinary
-cloudinary.config(
-    cloud_name=config("CLOUDINARY_CLOUD_NAME"),
-    api_key=config("CLOUDINARY_API_KEY"),
-    api_secret=config("CLOUDINARY_API_SECRET"),
-)
 
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "handlers": {
-        "console": {"class": "logging.StreamHandler", "formatter": "simple"},
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "simple_console",
+        },
         "file": {
             "class": "logging.FileHandler",
             "filename": "general.log",
-            "formatter": "verbose",
-            "level": config("DJANGO_LOG_LEVEL", "WARNING"),
+            "formatter": "detailed_file",
+            "level": "DEBUG",
         },
     },
     "loggers": {
-        "": {  # empty string indicates ~ All Apps including installed apps
+        "": {
             "handlers": ["file"],
             "propagate": True,
+            "level": "DEBUG",
         },
     },
     "formatters": {
-        "verbose": {
-            "format": (
-                "{asctime} ({levelname}) -  \
-                        {module} {name} {process:d} {thread:d}"
-                " {message}"
-            ),
+        "simple_console": {
+            "format": "{message}",
             "style": "{",
         },
-        "simple": {
-            "format": "{asctime} ({levelname}) -  {message}",
+        "detailed_file": {
+            "format": "{asctime} - {levelname}: {message}",
             "style": "{",
         },
     },

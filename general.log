@@ -1,0 +1,217 @@
+2024-02-25 17:30:13,762 - WARNING: Not Found: /docs/s
+2024-02-25 17:30:14,093 - WARNING: Not Found: /favicon.ico
+2024-02-25 17:31:28,979 - WARNING: Not Found: /docs/s
+2024-02-25 17:31:34,159 - WARNING: Not Found: /docs/s
+2024-02-25 17:31:41,265 (WARNING) -                          log django.request 149190 139780686870080 Not Found: /docs/s
+2024-02-25 17:33:20,151 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:33:23,501 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:33:46,695 - WARNING: Not Found: /docs/s
+2024-02-25 17:33:50,125 - WARNING: Not Found: /docs/s
+
+
+2024-02-25 17:34:10,325 - WARNING: Not Found: /docs/s
+2024-02-25 17:36:34,027 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:37:16,765 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+2024-02-25 17:37:29,257 - INFO: Watching for file changes with StatReloader - django.utils.autoreload
+2024-02-25 17:37:38,899 - WARNING: Unauthorized: /password-reset/ - django.request
+2024-02-25 17:37:54,323 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading. - django.utils.autoreload
+2024-02-25 17:38:18,691 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:38:21,746 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:38:51,235 - WARNING: Unauthorized: /logout/
+2024-02-25 17:40:57,184 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/core/middleware.py changed, reloading.
+2024-02-25 17:40:57,991 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:41:00,490 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/core/middleware.py changed, reloading.
+2024-02-25 17:41:01,319 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:41:15,007 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/core/middleware.py changed, reloading.
+2024-02-25 17:41:15,874 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:41:21,369 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/core/middleware.py changed, reloading.
+2024-02-25 17:41:22,127 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:41:24,580 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/core/middleware.py changed, reloading.
+2024-02-25 17:41:25,290 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:41:26,820 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/core/middleware.py changed, reloading.
+2024-02-25 17:41:27,726 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:41:30,183 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/core/middleware.py changed, reloading.
+2024-02-25 17:41:30,977 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:41:32,461 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/core/middleware.py changed, reloading.
+2024-02-25 17:41:33,052 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:41:41,870 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:41:51,033 - WARNING: Unauthorized: /logout/
+2024-02-25 17:42:06,911 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/core/middleware.py changed, reloading.
+2024-02-25 17:42:07,606 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:42:47,301 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:51,792 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:52,760 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:54,832 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:55,129 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:55,498 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:55,740 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:55,918 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:56,103 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:56,862 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:56,995 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:57,141 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:57,280 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:57,437 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:57,579 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:42:57,770 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:46:33,405 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+2024-02-25 17:46:34,334 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:46:40,769 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:46:45,953 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:46:55,344 - WARNING: Unauthorized: /password-reset/
+2024-02-25 17:47:11,945 - WARNING: Bad Request: /login/
+2024-02-25 17:47:44,642 - WARNING: Unauthorized: /user-profile/
+2024-02-25 17:48:01,528 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+2024-02-25 17:49:07,513 - INFO - autoreload - Watching for file changes with StatReloader
+2024-02-25 17:49:12,692 - WARNING - log - Unauthorized: /user-profile/
+2024-02-25 17:49:42,820 - INFO - autoreload - /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+2024-02-25 17:50:33,637 INFO Watching for file changes with StatReloader run_with_reloader /home/destinedcodes/.local/lib/python3.10/site-packages/django/utils/autoreload.py 668 None
+2024-02-25 17:50:40,087 INFO /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading. trigger_reload /home/destinedcodes/.local/lib/python3.10/site-packages/django/utils/autoreload.py 266 None
+2024-02-25 17:50:47,274 INFO Watching for file changes with StatReloader run_with_reloader /home/destinedcodes/.local/lib/python3.10/site-packages/django/utils/autoreload.py
+2024-02-25 17:50:50,591 WARNING Unauthorized: /user-profile/ log_response /home/destinedcodes/.local/lib/python3.10/site-packages/django/utils/log.py
+2024-02-25 17:51:22,714 INFO /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading. trigger_reload /home/destinedcodes/.local/lib/python3.10/site-packages/django/utils/autoreload.py
+2024-02-25 17:57:48,646 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:58:03,252 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/urls.py changed, reloading.
+2024-02-25 17:58:05,807 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:58:14,920 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: dbc3a633-d155-4300-8635-4a3bfb3165d1
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 17:58:14,921 - ERROR: Internal Server Error: /logs
+2024-02-25 17:58:23,316 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: 375214ae-acab-4097-93a6-983b9efcfcb8
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 17:58:23,317 - ERROR: Internal Server Error: /logs
+2024-02-25 17:58:29,354 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: f5b784fe-ce68-4838-8541-0f26b971a9b5
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 17:58:29,355 - ERROR: Internal Server Error: /logs
+2024-02-25 17:58:30,827 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: 6c5f732a-fbc8-42ca-ac98-19e7b5604e8a
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 17:58:30,828 - ERROR: Internal Server Error: /logs
+2024-02-25 17:58:31,352 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: f74390cb-c00e-4766-bb54-815d4794e4c6
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 17:58:31,353 - ERROR: Internal Server Error: /logs
+2024-02-25 17:59:21,443 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/urls.py changed, reloading.
+2024-02-25 17:59:22,536 - INFO: Watching for file changes with StatReloader
+2024-02-25 17:59:25,491 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: 8c8ac0f0-e1a4-4450-a9a3-46427f03759a
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 17:59:25,493 - ERROR: Internal Server Error: /logs
+2024-02-25 17:59:28,491 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: af483b8e-07d4-4fc2-b417-d3c5a3df1d0b
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 17:59:28,493 - ERROR: Internal Server Error: /logs
+2024-02-25 18:00:31,038 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:00:31,626 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:00:32,990 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: c164c32d-57cf-432e-b32a-03d5ba26ca93
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 18:00:32,991 - ERROR: Internal Server Error: /logs
+2024-02-25 18:00:33,486 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: eddfd6af-bc6d-4474-8fe2-d7f1f7248701
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 18:00:33,486 - ERROR: Internal Server Error: /logs
+2024-02-25 18:00:48,460 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:00:50,263 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: 0ad417b0-8fbe-4bfa-b00c-000c1ba3c33f
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 18:00:50,264 - ERROR: Internal Server Error: /logs
+2024-02-25 18:00:51,562 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: 691895d3-09f6-4af3-83e4-a6cc1126b27c
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 18:00:51,562 - ERROR: Internal Server Error: /logs
+2024-02-25 18:01:00,981 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:01:05,447 - ERROR: An exception occurred: view_logs() takes 0 positional arguments but 1 was given, Request_ID: cf392a30-832b-4205-9ec2-a3c63e5cd176
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: view_logs() takes 0 positional arguments but 1 was given
+2024-02-25 18:01:05,448 - ERROR: Internal Server Error: /logs
+2024-02-25 18:01:33,170 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:01:33,821 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:01:36,145 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:01:36,851 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:01:42,530 - ERROR: Internal Server Error: /logs
+Traceback (most recent call last):
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/destinedcodes/.local/lib/python3.10/site-packages/django/middleware/clickjacking.py", line 27, in process_response
+    if response.get("X-Frame-Options") is not None:
+AttributeError: 'str' object has no attribute 'get'
+2024-02-25 18:02:36,981 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:02:37,656 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:02:39,013 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:02:39,722 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:03:30,550 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:03:31,175 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:03:35,521 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:03:36,196 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:03:37,627 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:03:38,348 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:04:09,810 - WARNING: Unauthorized: /delete-user/
+2024-02-25 18:04:36,568 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:04:37,330 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:04:38,756 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:04:39,281 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:05:36,295 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/views.py changed, reloading.
+2024-02-25 18:05:37,116 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:06:09,470 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/urls.py changed, reloading.
+2024-02-25 18:06:10,352 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:06:23,085 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/urls.py changed, reloading.
+2024-02-25 18:06:24,112 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:07:41,821 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+2024-02-25 18:07:42,893 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:08:15,176 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/urls.py changed, reloading.
+2024-02-25 18:08:16,054 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:08:28,659 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/urls.py changed, reloading.
+2024-02-25 18:08:29,286 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:08:34,800 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/urls.py changed, reloading.
+2024-02-25 18:08:35,496 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:08:38,890 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/urls.py changed, reloading.
+2024-02-25 18:08:39,715 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:09:08,829 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+2024-02-25 18:09:09,321 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:09:18,857 - INFO: /home/destinedcodes/Jupytec/advoscholar_backend/advoscholar/settings.py changed, reloading.
+2024-02-25 18:09:19,467 - INFO: Watching for file changes with StatReloader
+2024-02-25 18:09:44,076 - WARNING: Not Found: /staticd
+2024-02-25 18:09:47,013 - WARNING: Not Found: /afd
+2024-02-25 18:09:51,777 - WARNING: Not Found: /asklfdj
+2024-02-25 18:09:54,322 - WARNING: Not Found: /api/redoc

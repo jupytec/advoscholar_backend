@@ -14,68 +14,36 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+
 from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
+from django.shortcuts import redirect
 
 from rest_framework.routers import DefaultRouter
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-    TokenVerifyView
-)
+
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
-from core.views import return_home_to_docs
+from .views import view_logs
+
 
 router = DefaultRouter()
 
-
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", return_home_to_docs),
-    path("__debug__/", include("debug_toolbar.urls")),
-    path('api-auth/', include('rest_framework.urls')),
+    path("", include("customauth.urls")),
+    path("api/schema", SpectacularAPIView.as_view(), name="schema"),
     path(
-        'api/token/',
-        TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path(
-        'api/token/refresh/',
-        TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path('', include(router.urls)),
-    path(
-        "api/v1/",
-        include(
-            [
-                path('auth/', include('customauth.urls')),
-                path("", include("emailer.urls")),
-                path("contactus/", include("contactus.urls")),
-            ]
-        ),
-    ),
-]
-
-urlpatterns += [
-    # YOUR PATTERNS
-    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
-    # Optional UI:
-    path(
-        "api/docs",
+        "docs",
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="swagger-schema",
     ),
     path(
-        "api/redoc",
+        "redoc",
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc-schema",
     ),
-]
+    path("logs", view_logs),
 
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path("", lambda request: redirect('swagger-schema')),
+]
