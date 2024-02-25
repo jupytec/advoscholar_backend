@@ -1,0 +1,1 @@
+web: gunicorn advoscholar.wsgi --log-file -
