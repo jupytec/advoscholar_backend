@@ -18,9 +18,10 @@
    "unique": 1
   }
  ],
+ "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-17 20:29:05.876254",
+ "modified": "2024-03-18 16:27:36.543306",
  "modified_by": "Administrator",
  "module": "Advoscholar",
  "name": "Qualification",

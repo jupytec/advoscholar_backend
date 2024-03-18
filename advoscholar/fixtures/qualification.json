@@ -1,0 +1,44 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Qualification",
+  "modified": "2024-03-17 20:38:07.983142",
+  "name": "OND",
+  "qualification": "OND"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Qualification",
+  "modified": "2024-03-17 20:38:15.264052",
+  "name": "HND",
+  "qualification": "HND"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Qualification",
+  "modified": "2024-03-17 20:39:17.470912",
+  "name": "BSC",
+  "qualification": "BSC"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Qualification",
+  "modified": "2024-03-17 20:41:58.033210",
+  "name": "MSC",
+  "qualification": "MSC"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Qualification",
+  "modified": "2024-03-18 16:25:59.418498",
+  "name": "PHD",
+  "qualification": "PHD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Qualification",
+  "modified": "2024-03-18 16:26:45.694999",
+  "name": "NCE",
+  "qualification": "NCE"
+ }
+]
