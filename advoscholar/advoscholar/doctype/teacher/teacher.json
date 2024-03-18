@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:teacher",
+ "creation": "2024-03-17 18:20:27.539957",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "teacher",
+  "years_of_experience",
+  "column_break_rqze",
+  "salary",
+  "qualification"
+ ],
+ "fields": [
+  {
+   "fieldname": "teacher",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Teacher",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_rqze",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Salary",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "years_of_experience",
+   "fieldtype": "Int",
+   "label": "Years of Experience",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "qualification",
+   "fieldtype": "Link",
+   "label": "Qualification",
+   "options": "Qualification",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-03-17 20:25:22.922900",
+ "modified_by": "Administrator",
+ "module": "Advoscholar",
+ "name": "Teacher",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

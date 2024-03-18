@@ -1,32 +1,71 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:class",
  "creation": "2024-03-11 14:03:16.357412",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "class_name",
-  "teacher"
+  "class_information_section",
+  "class",
+  "column_break_ddks",
+  "teacher",
+  "section_break_hjtf",
+  "multiple_teachers",
+  "subjects"
  ],
  "fields": [
   {
-   "fieldname": "class_name",
-   "fieldtype": "Data",
-   "label": "Class Name"
+   "fieldname": "teacher",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Teacher",
+   "options": "Teacher",
+   "reqd": 1
   },
   {
-   "fieldname": "teacher",
-   "fieldtype": "Select",
-   "label": "Teacher",
-   "options": "Destiny\nOxzioma\nEric"
+   "fieldname": "class",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Class",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_ddks",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_hjtf",
+   "fieldtype": "Section Break",
+   "label": "Subject Information"
+  },
+  {
+   "fieldname": "subjects",
+   "fieldtype": "Table",
+   "label": "Subjects",
+   "options": "Class Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "class_information_section",
+   "fieldtype": "Section Break",
+   "label": "Class Information"
+  },
+  {
+   "default": "1",
+   "fieldname": "multiple_teachers",
+   "fieldtype": "Check",
+   "label": "Multiple Teachers"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-11 14:03:58.404536",
+ "modified": "2024-03-17 20:03:04.140433",
  "modified_by": "Administrator",
  "module": "Advoscholar",
  "name": "Class",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

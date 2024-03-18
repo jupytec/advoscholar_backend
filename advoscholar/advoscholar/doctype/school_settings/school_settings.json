@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:sub_domain",
+ "creation": "2024-03-17 18:06:25.463423",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "school_name",
+  "address",
+  "sub_domain",
+  "column_break_mtzj",
+  "email",
+  "phone"
+ ],
+ "fields": [
+  {
+   "fieldname": "school_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "School Name",
+   "options": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sub_domain",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sub Domain",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mtzj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-03-17 18:12:47.457054",
+ "modified_by": "Administrator",
+ "module": "Advoscholar",
+ "name": "School Settings",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
